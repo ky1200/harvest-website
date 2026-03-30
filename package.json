@@ -1,0 +1,23 @@
+{
+  "name": "harvest-website",
+  "version": "1.0.0",
+  "description": "Harvest Confinement Centre website with Vercel Web Analytics",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests available\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ky1200/harvest-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ky1200/harvest-website/issues"
+  },
+  "homepage": "https://github.com/ky1200/harvest-website#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
