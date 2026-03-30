@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harvest Confinement Centre | 爱心陪月中心 | Johor</title>
+  <meta name="description" content="Trusted 28-day confinement care in Johor. Home-based, traditional nutrition, experienced nannies. Centres in Kulai, Senai & Johor Bahru." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:   '#FAF7F2',
+            sand:    '#EDE6D8',
+            linen:   '#D9CCBA',
+            sienna:  '#A07850',
+            bark:    '#6B5040',
+            moss:    '#8A9A7A',
+            charcoal:'#2E2A26',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2; color: #2E2A26; }
+
+    /* NAV */
+    #navbar { transition: background 0.3s, box-shadow 0.3s; }
+    #navbar.scrolled { background: rgba(250,247,242,0.96); box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+
+    /* HERO */
+    .hero-img {
+      background-image: linear-gradient(to bottom, rgba(250,247,242,0.18) 0%, rgba(250,247,242,0.82) 100%),
+        url('https://images.unsplash.com/photo-1601758003122-53c40e686a19?w=1600&auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center 30%;
+    }
+
+    /* DIVIDER */
+    .leaf-divider { color: #A07850; letter-spacing: 0.4em; font-size: 1.1rem; }
+
+    /* CARDS */
+    .centre-card { transition: transform 0.25s, box-shadow 0.25s; }
+    .centre-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(107,80,64,0.13); }
+
+    /* GALLERY */
+    .gallery-img { transition: transform 0.4s; overflow: hidden; }
+    .gallery-img:hover img { transform: scale(1.06); }
+    .gallery-img img { transition: transform 0.4s; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* TESTIMONIAL */
+    .testimonial-card { border-left: 3px solid #A07850; }
+
+    /* FLOATING WA */
+    #float-wa {
+      animation: pulse-wa 2.5s infinite;
+      position: fixed; bottom: 1.75rem; right: 1.5rem; z-index: 999;
+    }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+      50%       { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    }
+
+    /* FADE-IN ON SCROLL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.2em;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: #A07850;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- ─── FLOATING WHATSAPP ─────────────────────────────────────── -->
+<a id="float-wa"
+   href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20confinement%20centre"
+   target="_blank" rel="noopener"
+   class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-3 shadow-xl font-body font-medium text-sm transition-colors">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.374 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.836L.057 23.888a.5.5 0 0 0 .611.61l6.053-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.366l-.358-.213-3.712.897.934-3.614-.235-.373A9.818 9.818 0 1 1 12 21.818z"/>
+  </svg>
+  <span class="hidden sm:inline">WhatsApp Us</span>
+</a>
+
+<!-- ─── NAVBAR ────────────────────────────────────────────────── -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
+    <a href="#hero" class="flex flex-col leading-tight">
+      <span class="font-display text-xl font-medium text-bark tracking-wide">Harvest Confinement Centre</span>
+      <span class="font-body text-[10px] text-sienna tracking-widest uppercase">爱心陪月中心</span>
+    </a>
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex gap-7 font-body text-sm text-bark">
+      <li><a href="#about"        class="hover:text-sienna transition-colors">About</a></li>
+      <li><a href="#centres"      class="hover:text-sienna transition-colors">Centres</a></li>
+      <li><a href="#services"     class="hover:text-sienna transition-colors">Services</a></li>
+      <li><a href="#gallery"      class="hover:text-sienna transition-colors">Gallery</a></li>
+      <li><a href="#testimonials" class="hover:text-sienna transition-colors">Reviews</a></li>
+    </ul>
+    <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20confinement%20centre"
+       target="_blank" rel="noopener"
+       class="hidden md:inline-flex items-center gap-2 bg-sienna hover:bg-bark text-cream text-sm font-body font-medium px-5 py-2.5 rounded-full transition-colors">
+      Enquire Now
+    </a>
+    <!-- Hamburger -->
+    <button id="menu-btn" class="md:hidden text-bark" aria-label="Open menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-linen px-5 py-4 space-y-3 font-body text-sm text-bark">
+    <a href="#about"        class="block hover:text-sienna" onclick="closeMobileMenu()">About</a>
+    <a href="#centres"      class="block hover:text-sienna" onclick="closeMobileMenu()">Centres</a>
+    <a href="#services"     class="block hover:text-sienna" onclick="closeMobileMenu()">Services</a>
+    <a href="#gallery"      class="block hover:text-sienna" onclick="closeMobileMenu()">Gallery</a>
+    <a href="#testimonials" class="block hover:text-sienna" onclick="closeMobileMenu()">Reviews</a>
+    <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20confinement%20centre"
+       target="_blank" rel="noopener" onclick="closeMobileMenu()"
+       class="block mt-2 text-center bg-sienna text-cream py-2.5 rounded-full">Enquire on WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<section id="hero" class="hero-img min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16">
+  <div class="max-w-2xl mx-auto">
+    <p class="section-label mb-5 reveal">Johor's Trusted Confinement Centre</p>
+    <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-light text-charcoal leading-tight mb-5 reveal">
+      Nourished Beginnings,<br />
+      <em class="text-sienna italic">Gentle Care.</em>
+    </h1>
+    <p class="font-body text-base sm:text-lg text-bark/80 max-w-lg mx-auto mb-10 leading-relaxed reveal">
+      28-day confinement care rooted in tradition, warmth, and modern nutrition — so you can rest, recover, and bond with your newborn.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+      <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20confinement%20centre"
+         target="_blank" rel="noopener"
+         class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-body font-medium px-7 py-4 rounded-full shadow-lg transition-colors text-base">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.836L.057 23.888a.5.5 0 0 0 .611.61l6.053-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.366l-.358-.213-3.712.897.934-3.614-.235-.373A9.818 9.818 0 1 1 12 21.818z"/>
+        </svg>
+        Check Room Availability
+      </a>
+      <a href="#about"
+         class="flex items-center justify-center gap-2 border border-sienna text-sienna hover:bg-sienna hover:text-cream font-body font-medium px-7 py-4 rounded-full transition-colors text-base">
+        Learn More ↓
+      </a>
+    </div>
+    <!-- Trust pills -->
+    <div class="flex flex-wrap justify-center gap-3 mt-12 reveal">
+      <span class="bg-white/70 backdrop-blur border border-linen text-bark text-xs font-body px-4 py-2 rounded-full">✦ Traditional Confinement Meals</span>
+      <span class="bg-white/70 backdrop-blur border border-linen text-bark text-xs font-body px-4 py-2 rounded-full">✦ Experienced Nannies</span>
+      <span class="bg-white/70 backdrop-blur border border-linen text-bark text-xs font-body px-4 py-2 rounded-full">✦ Private Rooms Available</span>
+    </div>
+  </div>
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:block">
+    <div class="w-[1px] h-12 bg-sienna/40 mx-auto animate-bounce"></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────── -->
+<section id="about" class="py-24 px-6 bg-cream">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="section-label mb-4">Our Story</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-light text-charcoal mb-6 leading-snug">
+          A home away<br />from home.
+        </h2>
+        <p class="font-body text-bark/80 leading-relaxed mb-4">
+          At Harvest Confinement Centre (爱心陪月中心), we believe every new mother deserves rest, nourishment, and heartfelt support during her confinement month.
+        </p>
+        <p class="font-body text-bark/80 leading-relaxed mb-4">
+          Our home-based centres blend time-honoured Chinese confinement traditions with modern nutritional care — from freshly prepared herbal meals to gentle baby care guidance, every detail is thoughtfully managed.
+        </p>
+        <p class="font-body text-bark/80 leading-relaxed">
+          Whether you're a first-time mum or welcoming your second child, our experienced team provides a calm, hygienic, and supportive environment so you can truly focus on recovery and bonding.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="relative">
+          <img src="images/jbhouseexterior.jpg"
+               alt="Warm confinement care"
+               class="w-full h-80 object-cover rounded-2xl shadow-lg" />
+          <!-- Accent card -->
+          <div class="absolute -bottom-6 -left-6 bg-sand border border-linen rounded-xl px-5 py-4 shadow-md">
+            <p class="font-display text-3xl text-sienna font-medium">28</p>
+            <p class="font-body text-xs text-bark/70 mt-1">Days of dedicated<br />confinement care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Stats row -->
+    <div class="grid grid-cols-3 gap-6 mt-20 pt-10 border-t border-linen reveal">
+      <div class="text-center">
+        <p class="font-display text-4xl text-sienna">4</p>
+        <p class="font-body text-xs text-bark/60 mt-1 uppercase tracking-widest">Locations</p>
+      </div>
+      <div class="text-center border-x border-linen">
+        <p class="font-display text-4xl text-sienna">100+</p>
+        <p class="font-body text-xs text-bark/60 mt-1 uppercase tracking-widest">Mothers Cared For</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display text-4xl text-sienna">5★</p>
+        <p class="font-body text-xs text-bark/60 mt-1 uppercase tracking-widest">Rated by Families</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CENTRES ────────────────────────────────────────────────── -->
+<section id="centres" class="py-24 px-6 bg-sand">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="section-label mb-3">Our Locations</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-light text-charcoal">Choose Your Centre</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Kulai / Senai -->
+      <div class="centre-card bg-cream rounded-2xl overflow-hidden shadow-sm border border-linen reveal">
+        <div class="relative h-56 overflow-hidden">
+          <!-- REPLACE: swap this Unsplash URL with your actual Kulai/Senai centre photo -->
+          <img src="images/sentosa6.jpg"
+               alt="Kulai Senai Confinement Centre"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <span class="absolute top-4 left-4 bg-moss text-cream text-xs font-body font-medium px-3 py-1.5 rounded-full">Affordable</span>
+        </div>
+        <div class="p-7">
+          <p class="section-label mb-2">Kulai / Senai</p>
+          <h3 class="font-display text-2xl font-medium text-charcoal mb-3">Harvest Kulai–Senai Centre</h3>
+          <p class="font-body text-sm text-bark/75 leading-relaxed mb-5">
+            Our warm, home-like centres in Kulai and Senai offer quality confinement care at an accessible price point. Perfect for families seeking trusted, attentive care closer to home in the northern Johor region.
+          </p>
+          <ul class="font-body text-sm text-bark/70 space-y-1.5 mb-6">
+            <li class="flex items-center gap-2"><span class="text-sienna">✦</span> Cosy private & semi-private rooms</li>
+            <li class="flex items-center gap-2"><span class="text-sienna">✦</span> Daily herbal confinement meals</li>
+            <li class="flex items-center gap-2"><span class="text-sienna">✦</span> Experienced confinement nannies</li>
+          </ul>
+          <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20Kulai%20Senai%20confinement%20centre"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm font-body text-sienna hover:text-bark border border-sienna hover:border-bark px-5 py-2.5 rounded-full transition-colors">
+            Enquire about Kulai / Senai →
+          </a>
+        </div>
+      </div>
+
+      <!-- Johor Bahru -->
+      <div class="centre-card bg-cream rounded-2xl overflow-hidden shadow-sm border border-linen reveal">
+        <div class="relative h-56 overflow-hidden">
+          <!-- REPLACE: swap this Unsplash URL with your actual JB centre photo -->
+          <img src="images/century2.jpg"
+               alt="Johor Bahru Confinement Centre"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <span class="absolute top-4 left-4 bg-sienna text-cream text-xs font-body font-medium px-3 py-1.5 rounded-full">Premium</span>
+        </div>
+        <div class="p-7">
+          <p class="section-label mb-2">Johor Bahru</p>
+          <h3 class="font-display text-2xl font-medium text-charcoal mb-3">Harvest JB Premium Centre</h3>
+          <p class="font-body text-sm text-bark/75 leading-relaxed mb-5">
+            Our flagship Johor Bahru centre offers an elevated confinement experience with premium private rooms, enhanced meal programmes, and dedicated one-to-one nanny support — designed for mothers who want the very best start.
+          </p>
+          <ul class="font-body text-sm text-bark/70 space-y-1.5 mb-6">
+            <li class="flex items-center gap-2"><span class="text-sienna">✦</span> Spacious private ensuite rooms</li>
+            <li class="flex items-center gap-2"><span class="text-sienna">✦</span> Premium herbal & nutritionist-guided meals</li>
+            <li class="flex items-center gap-2"><span class="text-sienna">✦</span> 1-to-1 dedicated nanny support</li>
+          </ul>
+          <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20Johor%20Bahru%20confinement%20centre"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm font-body text-sienna hover:text-bark border border-sienna hover:border-bark px-5 py-2.5 rounded-full transition-colors">
+            Enquire about Johor Bahru →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ───────────────────────────────────────────────── -->
+<section id="services" class="py-24 px-6 bg-cream">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="section-label mb-3">What We Offer</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-light text-charcoal">Our Services</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="w-11 h-11 bg-sienna/10 rounded-full flex items-center justify-center mb-5 text-sienna text-xl">🍲</div>
+        <h3 class="font-display text-xl font-medium text-charcoal mb-2">Daily Confinement Meals</h3>
+        <p class="font-body text-sm text-bark/70 leading-relaxed">Freshly prepared Chinese confinement meals three times daily — herbal soups, nutritious dishes, and traditional tonics to support recovery.</p>
+      </div>
+
+      <div class="reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="w-11 h-11 bg-sienna/10 rounded-full flex items-center justify-center mb-5 text-sienna text-xl">👶</div>
+        <h3 class="font-display text-xl font-medium text-charcoal mb-2">Baby Care Support</h3>
+        <p class="font-body text-sm text-bark/70 leading-relaxed">Experienced nannies handle bathing, feeding guidance, and newborn care — so you can rest fully while your baby is in safe, loving hands.</p>
+      </div>
+
+      <div class="reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="w-11 h-11 bg-sienna/10 rounded-full flex items-center justify-center mb-5 text-sienna text-xl">🛏️</div>
+        <h3 class="font-display text-xl font-medium text-charcoal mb-2">Private Rooms</h3>
+        <p class="font-body text-sm text-bark/70 leading-relaxed">Comfortable private and semi-private room options with air-conditioning, ensuring you have a restful, personal space throughout your stay.</p>
+      </div>
+
+      <div class="reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="w-11 h-11 bg-sienna/10 rounded-full flex items-center justify-center mb-5 text-sienna text-xl">🧼</div>
+        <h3 class="font-display text-xl font-medium text-charcoal mb-2">Hygiene-Focused Care</h3>
+        <p class="font-body text-sm text-bark/70 leading-relaxed">Strict cleanliness standards throughout the centre — from sterilised feeding equipment to sanitised common areas — for you and your baby's safety.</p>
+      </div>
+
+      <div class="reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="w-11 h-11 bg-sienna/10 rounded-full flex items-center justify-center mb-5 text-sienna text-xl">💆‍♀️</div>
+        <h3 class="font-display text-xl font-medium text-charcoal mb-2">Experienced Nannies</h3>
+        <p class="font-body text-sm text-bark/70 leading-relaxed">Our trained and caring confinement nannies bring years of experience, offering gentle support to new mothers and attentive care for newborns.</p>
+      </div>
+
+      <div class="reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="w-11 h-11 bg-sienna/10 rounded-full flex items-center justify-center mb-5 text-sienna text-xl">🌿</div>
+        <h3 class="font-display text-xl font-medium text-charcoal mb-2">Traditional Wellness</h3>
+        <p class="font-body text-sm text-bark/70 leading-relaxed">Herbal bath preparations, ginger treatments, and other time-tested confinement practices blended with modern health knowledge.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ────────────────────────────────────────────────── -->
+<section id="gallery" class="py-24 px-6 bg-sand">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="section-label mb-3">Life at Harvest</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-light text-charcoal">Our Centre</h2>
+    </div>
+
+    <!-- REPLACE: swap each Unsplash URL below with your own centre photos -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+      <div class="gallery-img rounded-xl overflow-hidden h-44 sm:h-56 col-span-2 md:col-span-1 reveal">
+        <img src="images/food2.jpg" alt="Confinement meals" />
+      </div>
+      <div class="gallery-img rounded-xl overflow-hidden h-44 sm:h-56 reveal">
+        <img src="images/baby.jpg" alt="Newborn care" />
+      </div>
+      <div class="gallery-img rounded-xl overflow-hidden h-44 sm:h-56 reveal">
+        <img src="images/comfyroom.jpg" alt="Comfortable room" />
+      </div>
+      <div class="gallery-img rounded-xl overflow-hidden h-44 sm:h-56 reveal">
+        <img src="images/herbalsoup.jpg" alt="Herbal soup" />
+      </div>
+      <div class="gallery-img rounded-xl overflow-hidden h-44 sm:h-56 col-span-2 md:col-span-1 reveal">
+        <img src="images/mothernbaby.jpg" alt="Mother and baby" />
+      </div>
+      <div class="gallery-img rounded-xl overflow-hidden h-44 sm:h-56 reveal">
+        <img src="images/fakenannycare.png" alt="Nanny care" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ───────────────────────────────────────────── -->
+<section id="testimonials" class="py-24 px-6 bg-cream">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="section-label mb-3">Kind Words</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-light text-charcoal">Mothers' Stories</h2>
+    </div>
+
+    <div class="space-y-6">
+
+      <div class="testimonial-card reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="flex gap-1 text-sienna text-sm mb-4">★★★★★</div>
+        <p class="font-display text-xl italic text-charcoal leading-relaxed mb-5">
+          "I had my postpartum care at the Senai branch. The nanny was very friendly and took great care of the baby. The chef's breakfast pasta 🍝 was delicious! The sweet and sour pork for lunch was also very tasty! The food was nutritious and provided a good balance of nutrition 👏 I'll definitely miss the food here after my confinement period is over 🥘"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-linen flex items-center justify-center text-sienna font-display font-medium text-sm">WL</div>
+          <div>
+            <p class="font-body text-sm font-medium text-bark">Kumiko</p>
+            <p class="font-body text-xs text-bark/50">Senai Branch · First-time mum</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="flex gap-1 text-sienna text-sm mb-4">★★★★★</div>
+        <p class="font-display text-xl italic text-charcoal leading-relaxed mb-5">
+          "Overall, the stay was a good experience. The doctor was very dedicated, even coming to check on the baby at night when needed, which gave us parents peace of mind. We would also like to express our special thanks to the nanny, Phoebe, and Ning; both are very attentive and responsible in caring for our baby, giving us new parents great peace of mind.
+
+The staff were responsive and willing to communicate whenever we had questions or requests. Overall, it is a suitable confinement center for postpartum recovery. Thank you to the team for their efforts."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-linen flex items-center justify-center text-sienna font-display font-medium text-sm">AT</div>
+          <div>
+            <p class="font-body text-sm font-medium text-bark">Ying Mei</p>
+            <p class="font-body text-xs text-bark/50">Kulai Branch · Second-time mum</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal bg-sand rounded-2xl p-7 border border-linen">
+        <div class="flex gap-1 text-sienna text-sm mb-4">★★★★★</div>
+        <p class="font-display text-xl italic text-charcoal leading-relaxed mb-5">
+          "Had an amazing stay and rest here! Chose here because of their more reasonable price here but was amazed by the professional nanny here! There is 24 hours care for babies to make sure they were fed and changed. My baby grew well with 1 kg in a month 😆🥳
+
+There is also checkups available for babies to give mummy extra comfort and confidence on baby’s health especially first time mum"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-linen flex items-center justify-center text-sienna font-display font-medium text-sm">NY</div>
+          <div>
+            <p class="font-body text-sm font-medium text-bark">Evina Seow</p>
+            <p class="font-body text-xs text-bark/50">Johor Bahru Branch · First-time mum</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CALL TO ACTION ─────────────────────────────────────────── -->
+<section class="py-24 px-6 bg-bark text-cream">
+  <div class="max-w-2xl mx-auto text-center reveal">
+    <p class="section-label mb-5" style="color: #D9CCBA;">Ready to Begin</p>
+    <h2 class="font-display text-4xl sm:text-5xl font-light mb-6 leading-tight">
+      Start your confinement<br />journey with us today.
+    </h2>
+    <p class="font-body text-cream/70 text-base mb-10 leading-relaxed">
+      Rooms fill up quickly — reach out on WhatsApp to check availability for your expected delivery date. Our team is happy to answer any questions.
+    </p>
+    <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20confinement%20centre"
+       target="_blank" rel="noopener"
+       class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-body font-medium text-base px-8 py-4 rounded-full shadow-xl transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.374 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.836L.057 23.888a.5.5 0 0 0 .611.61l6.053-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.366l-.358-.213-3.712.897.934-3.614-.235-.373A9.818 9.818 0 1 1 12 21.818z"/>
+      </svg>
+      Contact Us on WhatsApp
+    </a>
+    <p class="font-body text-cream/40 text-xs mt-5">We typically reply within a few hours.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="bg-charcoal text-cream/60 py-12 px-6 font-body text-sm">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid sm:grid-cols-3 gap-8 mb-10">
+      <div>
+        <p class="font-display text-xl text-cream font-medium mb-1">Harvest Confinement Centre</p>
+        <p class="text-xs tracking-widest text-cream/40 mb-3">爱心陪月中心</p>
+        <p class="text-xs leading-relaxed">Trusted 28-day confinement care for new mothers across Johor, Malaysia.</p>
+      </div>
+      <div>
+        <p class="text-cream font-medium mb-3">Our Locations</p>
+        <ul class="space-y-1.5 text-xs">
+          <li>📍 Kulai, Johor</li>
+          <li>📍 Senai, Johor</li>
+          <li>📍 Johor Bahru, Johor</li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-cream font-medium mb-3">Get in Touch</p>
+        <a href="https://wa.me/60177779991?text=Hi%20I%20am%20interested%20in%20your%20confinement%20centre"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 text-xs transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.836L.057 23.888a.5.5 0 0 0 .611.61l6.053-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.366l-.358-.213-3.712.897.934-3.614-.235-.373A9.818 9.818 0 1 1 12 21.818z"/>
+          </svg>
+          +60 17-777 9991
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-cream/30">
+      © 2025 Harvest Confinement Centre (爱心陪月中心). All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ────────────────────────────────────────────────── -->
+<script>
+  // Sticky navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
